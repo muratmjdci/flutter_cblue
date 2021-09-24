@@ -78,6 +78,8 @@ public class FlutterCbluePlugin implements FlutterPlugin, MethodCallHandler {
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
                 String dev = deviceName + "-" + deviceHardwareAddress;
+                System.out.println(selectedDeviceName);
+                System.out.println(deviceName);
                 if (deviceName.equals(selectedDeviceName)) {
                   bluetooth.cancelDiscovery();
 
