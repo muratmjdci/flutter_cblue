@@ -59,6 +59,7 @@ public class FlutterCbluePlugin implements FlutterPlugin, MethodCallHandler {
     } else if (call.method.equals("printToBt")) {
 
       String printStr = call.argument("printStr");
+      String selectedDeviceName = call.argument("deviceName");
 
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
 
@@ -77,7 +78,7 @@ public class FlutterCbluePlugin implements FlutterPlugin, MethodCallHandler {
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
                 String dev = deviceName + "-" + deviceHardwareAddress;
-                if (deviceName.startsWith("zebra")) {
+                if (deviceName.equals(selectedDeviceName)) {
                   bluetooth.cancelDiscovery();
 
                   ParcelUuid[] uuids = device.getUuids();
