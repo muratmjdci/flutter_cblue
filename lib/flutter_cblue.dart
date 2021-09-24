@@ -20,4 +20,12 @@ class FlutterCblue {
     final String result = await _channel.invokeMethod('printToBt', params);
     return result;
   }
+
+  static Future<bool> checkDevice({@required deviceName}) async {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'deviceName': deviceName
+    };
+    final bool result = await _channel.invokeMethod('checkDevice', params);
+    return result;
+  }
 }

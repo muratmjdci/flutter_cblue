@@ -116,8 +116,10 @@ class _MyAppState extends State<MyApp> {
 //2101000630222096
 
   void printBT(String _str) async {
-    print(await FlutterCblue.printToBT(
-        printStr: _str, deviceName: "F8:8A:5E:B7:E7:35")); // default logType
+    /* print(await FlutterCblue.printToBT(
+        printStr: _str, deviceName: "F8:8A:5E:B7:E7:35")); // default logType */
+    print(
+        await FlutterCblue.checkDevice(deviceName: "F8:8A:5E:B7123123:E7:35"));
   }
 
   @override
